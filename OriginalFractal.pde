@@ -1,21 +1,20 @@
-public int num;
 public void setup()
 {
-   size(700,700);
-   num = 1;
+  size(500,500);
+  rectMode(CENTER);
 }
 public void draw()
 {
   background(0);
-  sierpinski(275, 325, 300, 8);
-  
+  myFractal(250,250,300);
 }
-public void sierpinski(int x, int y, int len, int size){
-  if(size < 2){
-    triangle(x, y, x + (len/2), y - len, x +len, y );
-  }else{
-    sierpinski(x, y, len/2, size-1);
-    sierpinski(x + len/2, y , len/2, size-1);
-    sierpinski(x + len/4, y - len/2, len/2, size-1);
+public void myFractal(int x, int y, int siz){
+  rect(x,y,siz,siz);
+  
+  if(siz >10){
+    myFractal(x-siz/2,y,siz/2);
+    myFractal(x+siz/2,y,siz/2);
+    myFractal(x,y-siz/2,siz/2);
+    myFractal(x,y+siz/2,siz/2);
   }
 }
