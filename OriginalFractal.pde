@@ -2,10 +2,11 @@ public void setup()
 {
   size(500,500);
   rectMode(CENTER);
+  fill((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));
 }
 public void draw()
 {
-  background(0);
+  background(255);
   myFractal(250,250,300);
 }
 public void myFractal(int x, int y, int siz){
